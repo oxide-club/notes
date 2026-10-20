@@ -77,3 +77,22 @@ da raiz ficam fora desse gatilho. A configuração do secret e o acompanhamento
 da publicação estão descritos no [README](README.md#prévia-e-publicação).
 `NOTES_SOURCE` é uma opção de desenvolvimento e não pode substituir a origem
 de produção.
+
+## Notificações no Discord
+
+PRs prontos para revisão que adicionam `<id>/index.md` são divulgados em
+`#contribuicoes`, com título e link apontando para o PR. Drafts aguardam
+a passagem para pronto; atualizações e reaberturas não repetem um aviso
+já confirmado. Edições, anexos isolados e renomeações não são novas propostas.
+
+Depois do merge e da publicação bem-sucedida pelo site, páginas publicadas
+pela primeira vez aparecem em `#novidades`, com link de `oxideclub.dev`.
+Conteúdo com `draft: true` aguarda publicação.
+
+Mantenedores devem configurar `DISCORD_CONTRIBUTIONS_WEBHOOK_URL` como Actions
+Secret deste repositório antes de habilitar o workflow de contribuições.
+O registro permanente fica em `state.json` na branch `discord-state`.
+Veja a [configuração e recuperação das notificações](https://github.com/oxide-club/oxideclub.dev/blob/main/docs/DISCORD-NOTIFICATIONS.md).
+Para executar os testes sem enviar mensagens: `node --test tests/discord-*.test.mjs`
+com Node.js 24. Mantenha os módulos de `scripts/discord/` sincronizados com os
+correspondentes no repositório do site.
