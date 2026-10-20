@@ -82,3 +82,22 @@ Consulte [CONTRIBUTING.md](CONTRIBUTING.md) para o fluxo de contribuição e a r
 A prosa e a documentação originais são disponibilizadas sob [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), na medida dos direitos que os contribuidores podem licenciar. Preserve a atribuição e os avisos de materiais de terceiros. Consulte [LICENSE](LICENSE) para o escopo e a referência ao texto legal.
 
 Código substancial que possa ser usado como software independente precisa de uma licença de software explícita e separada; não presuma que este aviso a fornece.
+
+## Notificações no Discord
+
+PRs prontos para revisão que adicionam `<id>/index.md` são divulgados em
+`#contribuicoes`, com título e link apontando para o PR. Drafts aguardam
+a passagem para pronto; atualizações e reaberturas não repetem um aviso
+já confirmado. Edições, anexos isolados e renomeações não são novas propostas.
+
+Depois do merge e da publicação bem-sucedida pelo site, páginas publicadas
+pela primeira vez aparecem em `#novidades`, com link de `oxideclub.dev`.
+Conteúdo com `draft: true` aguarda publicação.
+
+Mantenedores devem configurar `DISCORD_CONTRIBUTIONS_WEBHOOK_URL` como Actions
+Secret deste repositório antes de habilitar o workflow de contribuições.
+O registro permanente fica em `state.json` na branch `discord-state`.
+Veja a [configuração e recuperação das notificações](https://github.com/oxide-club/oxideclub.dev/blob/main/docs/DISCORD-NOTIFICATIONS.md).
+Para executar os testes sem enviar mensagens: `node --test tests/discord-*.test.mjs`
+com Node.js 24. Mantenha os módulos de `scripts/discord/` sincronizados com os
+correspondentes no repositório do site.
