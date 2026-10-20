@@ -70,4 +70,10 @@ Antes de pedir revisão, confira:
 
 Para publicar, inclua `publishedAt` e altere `draft` para `false` após a revisão editorial. Como `draft` omitido equivale a `false`, mantenha o valor explícito nos rascunhos. Use `updatedAt` para registrar atualizações relevantes em uma nota publicada.
 
-Após aprovação e merge, um mantenedor executa manualmente o workflow **Deploy production** no repositório do site. O merge das notas não publica automaticamente o site. `NOTES_SOURCE` é uma opção de desenvolvimento e não pode substituir a origem de produção.
+Após aprovação e merge em `main`, alterações em `*/index.md` ou `*/assets/**`
+disparam automaticamente o workflow **Deploy production** no repositório do
+site, com validação antes da publicação. `docs/`, `templates/` e documentação
+da raiz ficam fora desse gatilho. A configuração do secret e o acompanhamento
+da publicação estão descritos no [README](README.md#prévia-e-publicação).
+`NOTES_SOURCE` é uma opção de desenvolvimento e não pode substituir a origem
+de produção.

@@ -61,7 +61,19 @@ NOTES_SOURCE=/caminho/absoluto/para/notes npm run dev
 
 `NOTES_SOURCE` seleciona uma cópia local das notas para desenvolvimento. Esse override não é permitido em produção.
 
-Depois da revisão e do merge das notas, a publicação é manual: execute o workflow **Deploy production** no GitHub do repositório do site. Um merge neste repositório não dispara automaticamente o deploy do site.
+Depois da revisão e do merge em `main`, alterações em `*/index.md` ou
+`*/assets/**` disparam automaticamente **Deploy production** no repositório
+do site. Adições, remoções e renomeações também contam. `docs/`, `templates/`
+e documentação da raiz não disparam publicação. PRs e outras branches não
+publicam. Alterações em rascunhos também disparam validação, mas os rascunhos
+continuam fora do site publicado.
+
+O workflow **Publish website content** precisa do secret `WEBSITE_DEPLOY_TOKEN`;
+consulte a [configuração no repositório do site](https://github.com/oxide-club/oxideclub.dev#one-time-trigger-setup).
+Seu sucesso confirma o envio da solicitação; acompanhe **Deploy production**
+no repositório do site para verificar o resultado. **Deploy production**
+também pode ser executado manualmente no repositório do site para tentar
+novamente uma publicação.
 
 Consulte [CONTRIBUTING.md](CONTRIBUTING.md) para o fluxo de contribuição e a revisão editorial.
 
