@@ -1,0 +1,17 @@
+# Arquivos locais do sistema e de editores
+.DS_Store
+Thumbs.db
+*~
+*.swp
+*.swo
+.idea/
+
+# Dependências e saídas locais de ferramentas
+node_modules/
+dist/
+.astro/
+
+# Credenciais e configuração local
+.env
+.env.*
+!.env.example
